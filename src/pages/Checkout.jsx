@@ -42,11 +42,14 @@ function Checkout() {
     };
 
     try {
-      const res = await fetch("http://localhost:5000/api/orders/create", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(orderData),
-      });
+      const res = await fetch(
+        "https://foodiehub-production-6094.up.railway.app/api/orders/create",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(orderData),
+        },
+      );
 
       if (!res.ok) {
         const errData = await res.json();
